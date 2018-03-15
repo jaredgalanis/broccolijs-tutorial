@@ -7,7 +7,7 @@
     "clean": "rm -rf dist",
     "build": "npm run clean && broccoli build dist",
     "build-prod": "npm run clean && BROCCOLI_ENV=production broccoli build dist",
-    "serve": "broccoli serve || true",
+    "serve": "broccoli serve",
     "debug-build": "npm run clean && node $NODE_DEBUG_OPTION $(which broccoli) build dist",
     "debug-serve": "node $NODE_DEBUG_OPTION $(which broccoli) serve"
   },
@@ -25,12 +25,15 @@
   },
   "homepage": "https://github.com/oligriffiths/broccolijs-tutorial#readme",
   "devDependencies": {
+    "@glimmer/resolution-map-builder": "^0.5.1",
+    "@glimmer/resolver-configuration-builder": "^0.1.2",
     "babel-core": "^6.26.0",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-preset-env": "^1.6.1",
     "broccoli": "^1.1.4",
     "broccoli-asset-rev": "^2.6.0",
     "broccoli-clean-css": "^2.0.1",
+    "broccoli-config-loader": "^1.0.1",
     "broccoli-env": "^0.0.1",
     "broccoli-funnel": "^2.0.1",
     "broccoli-livereload": "https://github.com/oligriffiths/broccoli-livereload.git#patch-1",
@@ -38,9 +41,13 @@
     "broccoli-rollup": "^2.0.0",
     "broccoli-sass-source-maps": "^2.2.0",
     "broccoli-uglify-sourcemap": "^2.0.2",
+    "ember-build-utilities": "^0.4.0",
     "rollup-plugin-babel": "^3.0.3",
     "rollup-plugin-commonjs": "^8.4.1",
     "rollup-plugin-node-resolve": "^3.2.0",
     "rollup-plugin-uglify": "^3.0.0"
+  },
+  "dependencies": {
+    "@glimmer/app-compiler": "^0.9.1"
   }
 }
