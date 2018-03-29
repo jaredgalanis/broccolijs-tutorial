@@ -1,5 +1,7 @@
 const Funnel = require("broccoli-funnel");
 const Merge = require("broccoli-merge-trees");
+const EsLint = require("broccoli-lint-eslint");
+const SassLint = require("broccoli-sass-lint");
 const CompileSass = require("broccoli-sass-source-maps");
 const Rollup = require("broccoli-rollup");
 const LiveReload = require('broccoli-livereload');
@@ -15,8 +17,13 @@ const html = new Funnel(appRoot, {
   annotation: "Index file",
 });
 
+// Lint js files
+let js = new EsLint(appRoot, {
+  persist: true
+});
+
 // Compile JS through rollup
-let js = new Rollup(appRoot, {
+js = new Rollup(js, {
   inputFiles: ["**/*.js"],
   annotation: "JS Transformation",
   rollup: {
@@ -41,10 +48,15 @@ let js = new Rollup(appRoot, {
   }
 });
 
+// Lint css files
+let css = new SassLint(appRoot + '/styles', {
+  disableTestGenerator: true,
+});
+
 // Copy CSS file into assets
-const css = new CompileSass(
-  [appRoot],
-  "styles/app.scss",
+css = new CompileSass(
+  [css],
+  "app.scss",
   "assets/app.css",
   {
     sourceMap: true,
