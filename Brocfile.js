@@ -95,8 +95,9 @@ tree = log(tree, {
 if (isProduction) {
   tree = new AssetRev(tree);
 } else {
-if (!isProduction) {tree = new LiveReload(tree, {
-  target: 'index.html',
-});}
+  tree = new LiveReload(tree, {
+    target: 'index.html',
+  });
+}
 
 module.exports = tree;
