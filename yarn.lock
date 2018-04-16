@@ -708,6 +708,10 @@ broccoli-caching-writer@^3.0.3:
     rsvp "^3.0.17"
     walk-sync "^0.3.0"
 
+broccoli-env@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/broccoli-env/-/broccoli-env-0.0.1.tgz#9d86e67d6b0edb76f4564e38ba23dc4c3106216a"
+
 broccoli-debug@^0.6.1:
   version "0.6.4"
   resolved "https://registry.yarnpkg.com/broccoli-debug/-/broccoli-debug-0.6.4.tgz#986eb3d2005e00e3bb91f9d0a10ab137210cd150"
