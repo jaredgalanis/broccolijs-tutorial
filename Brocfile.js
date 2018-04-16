@@ -5,12 +5,16 @@ const Rollup = require("broccoli-rollup");
 const LiveReload = require('broccoli-livereload');
 const CleanCss = require('broccoli-clean-css');
 const log = require('broccoli-stew').log;
-const babel = require("rollup-plugin-babel");
+const AssetRev = require('broccoli-asset-rev');
+const babel = require('rollup-plugin-babel');
 const nodeResolve = require('rollup-plugin-node-resolve');
 const commonjs = require('rollup-plugin-commonjs');
 const uglify = require('rollup-plugin-uglify');
 const env = require('broccoli-env').getEnv() || 'development';
 const isProduction = env === 'production';
+
+// Status
+console.log('Environment: ' + env);
 
 // Status
 console.log('Environment: ' + env);
@@ -72,6 +76,11 @@ if (isProduction) {
   css = new CleanCss(css);
 }
 
+// Compress our CSS
+if (isProduction) {
+  css = new CleanCss(css);
+}
+
 // Copy public files into destination
 const public = new Funnel("public", {
   annotation: "Public files",
@@ -85,11 +94,12 @@ tree = log(tree, {
   output: 'tree',
 });
 
-// Include live reaload server
-if (!isProduction) {
-  tree = new LiveReload(tree, {
-    target: 'index.html',
-  });
-}
+// Include asset hashes
+if (isProduction) {
+  tree = new AssetRev(tree);
+} else {
+if (!isProduction) {tree = new LiveReload(tree, {
+  target: 'index.html',
+});}
 
 module.exports = tree;
