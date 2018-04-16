@@ -16,9 +16,6 @@ const isProduction = env === 'production';
 // Status
 console.log('Environment: ' + env);
 
-// Status
-console.log('Environment: ' + env);
-
 const appRoot = "app";
 
 // Copy HTML file from app root to destination
