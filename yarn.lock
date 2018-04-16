@@ -708,9 +708,14 @@ broccoli-caching-writer@^3.0.3:
     rsvp "^3.0.17"
     walk-sync "^0.3.0"
 
-broccoli-env@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/broccoli-env/-/broccoli-env-0.0.1.tgz#9d86e67d6b0edb76f4564e38ba23dc4c3106216a"
+broccoli-clean-css@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/broccoli-clean-css/-/broccoli-clean-css-2.0.1.tgz#1bf48a43d7626522621351c696e5f9441f628db2"
+  dependencies:
+    broccoli-persistent-filter "^1.2.13"
+    clean-css-promise "^2.0.1"
+    json-stable-stringify "^1.0.1"
+    source-map-to-comment "^1.1.0"
 
 broccoli-debug@^0.6.1:
   version "0.6.4"
@@ -722,6 +727,10 @@ broccoli-debug@^0.6.1:
     heimdalljs-logger "^0.1.7"
     symlink-or-copy "^1.1.8"
     tree-sync "^1.2.2"
+
+broccoli-env@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/broccoli-env/-/broccoli-env-0.0.1.tgz#9d86e67d6b0edb76f4564e38ba23dc4c3106216a"
 
 broccoli-filter@^1.3.0:
   version "1.3.0"
@@ -813,7 +822,7 @@ broccoli-node-info@1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/broccoli-node-info/-/broccoli-node-info-1.1.0.tgz#3aa2e31e07e5bdb516dd25214f7c45ba1c459412"
 
-broccoli-persistent-filter@^1.1.6:
+broccoli-persistent-filter@^1.1.6, broccoli-persistent-filter@^1.2.13:
   version "1.4.3"
   resolved "https://registry.yarnpkg.com/broccoli-persistent-filter/-/broccoli-persistent-filter-1.4.3.tgz#3511bc52fc53740cda51621f58a28152d9911bc1"
   dependencies:
@@ -892,6 +901,20 @@ broccoli-stew@^1.5.0:
     rsvp "^3.0.16"
     symlink-or-copy "^1.1.8"
     walk-sync "^0.3.0"
+
+broccoli-uglify-sourcemap@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/broccoli-uglify-sourcemap/-/broccoli-uglify-sourcemap-2.0.2.tgz#f4a73112f1f56b46043e2e89cba5ce7762cddeb3"
+  dependencies:
+    broccoli-plugin "^1.2.1"
+    debug "^3.1.0"
+    lodash.defaultsdeep "^4.6.0"
+    matcher-collection "^1.0.5"
+    mkdirp "^0.5.0"
+    source-map-url "^0.4.0"
+    symlink-or-copy "^1.0.1"
+    uglify-es "^3.1.3"
+    walk-sync "^0.3.2"
 
 broccoli@^1.1.4:
   version "1.1.4"
@@ -1003,6 +1026,18 @@ chokidar@^1.7.0:
   optionalDependencies:
     fsevents "^1.0.0"
 
+clean-css-promise@^2.0.1:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/clean-css-promise/-/clean-css-promise-2.1.0.tgz#2a43936585d56547d7fa0913ff2156f5652d77da"
+  dependencies:
+    clean-css "^4.1.9"
+
+clean-css@^4.1.9:
+  version "4.1.11"
+  resolved "https://registry.yarnpkg.com/clean-css/-/clean-css-4.1.11.tgz#2ecdf145aba38f54740f26cefd0ff3e03e125d6a"
+  dependencies:
+    source-map "0.5.x"
+
 clean-up-path@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/clean-up-path/-/clean-up-path-1.0.0.tgz#de9e8196519912e749c9eaf67c13d64fac72a3e5"
@@ -1040,6 +1075,10 @@ combined-stream@1.0.6, combined-stream@^1.0.5, combined-stream@~1.0.5:
 commander@^2.5.0, commander@^2.9.0:
   version "2.15.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.15.0.tgz#ad2a23a1c3b036e392469b8012cec6b33b4c1322"
+
+commander@~2.13.0:
+  version "2.13.0"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-2.13.0.tgz#6964bca67685df7c1f1430c584f07d7597885b9c"
 
 concat-map@0.0.1:
   version "0.0.1"
@@ -1108,6 +1147,12 @@ dashdash@^1.12.0:
 debug@2.6.9, debug@^2.1.1, debug@^2.1.3, debug@^2.2.0, debug@^2.4.0, debug@^2.6.8:
   version "2.6.9"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
+  dependencies:
+    ms "2.0.0"
+
+debug@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-3.1.0.tgz#5bb5a0672628b64149566ba16819e61518c67261"
   dependencies:
     ms "2.0.0"
 
@@ -1977,6 +2022,10 @@ lodash.clonedeep@^4.3.2:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.clonedeep/-/lodash.clonedeep-4.5.0.tgz#e23f3f9c4f8fbdde872529c1071857a086e5ccef"
 
+lodash.defaultsdeep@^4.6.0:
+  version "4.6.0"
+  resolved "https://registry.yarnpkg.com/lodash.defaultsdeep/-/lodash.defaultsdeep-4.6.0.tgz#bec1024f85b1bd96cbea405b23c14ad6443a6f81"
+
 lodash.mergewith@^4.6.0:
   version "4.6.1"
   resolved "https://registry.yarnpkg.com/lodash.mergewith/-/lodash.mergewith-4.6.1.tgz#639057e726c3afbdb3e7d42741caa8d6e4335927"
@@ -2025,7 +2074,7 @@ map-obj@^1.0.0, map-obj@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/map-obj/-/map-obj-1.0.1.tgz#d933ceb9205d82bdcf4886f6742bdc2b4dea146d"
 
-matcher-collection@^1.0.0:
+matcher-collection@^1.0.0, matcher-collection@^1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/matcher-collection/-/matcher-collection-1.0.5.tgz#2ee095438372cb8884f058234138c05c644ec339"
   dependencies:
@@ -2695,6 +2744,12 @@ rollup-plugin-node-resolve@^3.2.0:
     is-module "^1.0.0"
     resolve "^1.1.6"
 
+rollup-plugin-uglify@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-uglify/-/rollup-plugin-uglify-3.0.0.tgz#a34eca24617709c6bf1778e9653baafa06099b86"
+  dependencies:
+    uglify-es "^3.3.7"
+
 rollup-pluginutils@^1.5.0:
   version "1.5.2"
   resolved "https://registry.yarnpkg.com/rollup-pluginutils/-/rollup-pluginutils-1.5.2.tgz#1e156e778f94b7255bfa1b3d0178be8f5c552408"
@@ -2795,17 +2850,25 @@ source-map-support@^0.4.15:
   dependencies:
     source-map "^0.5.6"
 
+source-map-to-comment@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/source-map-to-comment/-/source-map-to-comment-1.1.0.tgz#e518c40bc7399b2e23c8e331a11635a97750e9c3"
+
+source-map-url@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/source-map-url/-/source-map-url-0.4.0.tgz#3e935d7ddd73631b97659956d55128e87b5084a3"
+
+source-map@0.5.x, source-map@^0.5.6, source-map@^0.5.7, source-map@~0.5.1:
+  version "0.5.7"
+  resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.5.7.tgz#8a039d2d1021d22d1ea14c80d8ea468ba2ef3fcc"
+
 source-map@^0.4.2, source-map@^0.4.4:
   version "0.4.4"
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.4.4.tgz#eba4f5da9c0dc999de68032d8b4f76173652036b"
   dependencies:
     amdefine ">=0.0.4"
 
-source-map@^0.5.6, source-map@^0.5.7, source-map@~0.5.1:
-  version "0.5.7"
-  resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.5.7.tgz#8a039d2d1021d22d1ea14c80d8ea468ba2ef3fcc"
-
-source-map@^0.6.1:
+source-map@^0.6.1, source-map@~0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
 
@@ -3002,6 +3065,13 @@ tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   version "0.14.5"
   resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-0.14.5.tgz#5ae68177f192d4456269d108afa93ff8743f4f64"
 
+uglify-es@^3.1.3, uglify-es@^3.3.7:
+  version "3.3.9"
+  resolved "https://registry.yarnpkg.com/uglify-es/-/uglify-es-3.3.9.tgz#0c1c4f0700bed8dbc124cdb304d2592ca203e677"
+  dependencies:
+    commander "~2.13.0"
+    source-map "~0.6.1"
+
 uglify-js@^2.6:
   version "2.8.29"
   resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-2.8.29.tgz#29c5733148057bb4e1f75df35b7a9cb72e6a59dd"
@@ -3076,7 +3146,7 @@ walk-sync@^0.2.7:
     ensure-posix-path "^1.0.0"
     matcher-collection "^1.0.0"
 
-walk-sync@^0.3.0, walk-sync@^0.3.1:
+walk-sync@^0.3.0, walk-sync@^0.3.1, walk-sync@^0.3.2:
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/walk-sync/-/walk-sync-0.3.2.tgz#4827280afc42d0e035367c4a4e31eeac0d136f75"
   dependencies:
